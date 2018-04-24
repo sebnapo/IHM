@@ -1,0 +1,13 @@
+package napoleon.architectureComposite;
+
+public class Main {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Liste c1 = new Cellule(1, new Cellule(4,new Cellule(12, new Vide())));
+	}
+
+}

@@ -1,0 +1,86 @@
+package Exo1;
+
+import java.awt.event.ActionEvent;
+import java.util.Observable;
+
+import javax.swing.AbstractAction;
+
+public class Controleur implements java.util.Observer{
+	private Modele modele;
+	private Vue vue;
+	
+	public Controleur(Modele modele){
+		this.modele = modele;
+		this.vue = new Vue();
+	
+		ActionPlus listenerPlus = new ActionPlus(vue,modele);
+		ActionMoins listenerMoins = new ActionMoins(vue,modele);
+		this.vue.btnPlus.addActionListener(listenerPlus);
+		this.vue.btnMoins.addActionListener(listenerMoins);
+		
+		this.modele.init();
+	}
+	
+	@Override
+	public void update(Observable arg0, Object arg1) {
+		
+	}
+	
+	private class ActionPlus extends AbstractAction implements java.util.Observer {
+		private Vue vue;
+		private Modele modele;
+		
+		public ActionPlus(Vue vue, Modele modele){
+			this.vue = vue;
+			this.modele = modele;
+		}
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			try {
+				this.modele.incValue();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			this.vue.setLabelText(String.valueOf(this.modele.getValue()));
+			this.vue.repaint();
+		}
+
+		@Override
+		public void update(Observable arg0, Object arg1) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+	}
+	
+	private class ActionMoins extends AbstractAction implements java.util.Observer {
+		private Vue vue;
+		private Modele modele;
+		
+		public ActionMoins(Vue vue,Modele modele){
+			this.vue = vue;
+			this.modele = modele;
+		}
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			// TODO Auto-generated method stub
+			try {
+				this.modele.decValue();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			this.vue.setLabelText(String.valueOf(this.modele.getValue()));
+			this.vue.repaint();
+		}
+
+		@Override
+		public void update(Observable arg0, Object arg1) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+	}
+	
+}

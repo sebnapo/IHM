@@ -1,0 +1,8 @@
+package napoleon.architectureComposite;
+
+public interface Liste {
+	public int longueur();
+	public boolean find(int n);
+	public int max();
+	
+}

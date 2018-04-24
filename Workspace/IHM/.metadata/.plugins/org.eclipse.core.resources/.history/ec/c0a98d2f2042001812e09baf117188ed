@@ -1,0 +1,43 @@
+package Exo1;
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class Vue extends JFrame {
+	public JButton btnPlus,btnPlus2;
+	public JButton btnMoins,btnMoins2;
+	public JTextField label,label2;
+	
+	public Vue(){
+		Container pane = this.getContentPane();
+		this.setPreferredSize(new Dimension(400,400));
+		
+		JPanel panelEast = new JPanel(new FlowLayout());
+		JPanel panelWest = new JPanel(new FlowLayout());
+		
+		this.btnMoins = new JButton();
+		this.btnPlus = new JButton();
+		this.label = new JTextField("");
+		this.label.setPreferredSize(new Dimension(50,30));
+		this.btnMoins.setText("-");
+		this.btnPlus.setText("+");
+		
+		panelEast.add(this.btnMoins );
+		panelEast.add(this.label);
+		panelEast.add(this.btnPlus);
+		pane.add(panelEast,BorderLayout.EAST);
+		
+		this.setLocationRelativeTo(null);
+		this.setContentPane(pane);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.pack();
+		this.setVisible(true);
+	}
+}

@@ -1,0 +1,18 @@
+package airHocker;
+
+import java.awt.Rectangle;
+
+public class Pulsar implements MovingObject extends Palet {
+
+	public Rectangle getRect() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void deplace() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+}

@@ -1,0 +1,37 @@
+package napoleon.architectureComposite;
+
+public class Cellule implements Liste {
+	
+	int val;
+	Liste next;
+	
+	public Cellule(int val, Liste next){
+		this.val = val;
+		this.next = next;
+	}
+	public int longueur() {
+		int cpt = this.next.longueur();
+		if(this.next.longueur() == 0) {
+			System.out.println(cpt);
+			return cpt;
+		}
+		cpt+=1;
+		System.out.println(cpt);
+		return cpt;
+	}
+
+	public boolean find(int n) {
+		if(this.val == n) return true;
+		else this.next.find(n);
+		return false;
+	}
+	
+	public int max() {
+		int tmp = this.next.max();
+		if(tmp < this.val) {
+			return this.val;
+		}
+		return tmp;
+	}
+	
+}

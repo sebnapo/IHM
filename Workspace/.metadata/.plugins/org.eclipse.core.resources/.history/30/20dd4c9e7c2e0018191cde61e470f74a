@@ -1,0 +1,29 @@
+package geometrie;
+
+import javax.swing.* ;
+
+import java.awt.* ;
+
+public class Main {
+
+    public static void main(String[] args){
+	System.setProperty("sun.java2d.opengl", "true"); /* pour animation fluide */
+	JPanel fen = new JPanel();
+	fen.setSize(200, 200);
+	fen.setVisible(true);
+	
+
+	while (true){
+
+	    fen.repaint() ; /* avec fen.repaint, la fenetre est effacee avant le paint,
+				   avec pan.repaint, on garde la memoire de ce qui a été dessiné avant. */
+	    
+	    try {
+		Thread.sleep(50);
+	    } catch (InterruptedException e) {
+		e.printStackTrace();
+	    }	
+	}
+	
+    }
+}

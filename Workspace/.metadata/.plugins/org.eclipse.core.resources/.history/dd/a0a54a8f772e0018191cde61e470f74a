@@ -1,0 +1,18 @@
+package geometrie;
+
+import java.awt.Graphics;
+
+public class Cercle implements Figure{
+	public float rayon;
+	
+	public void trace(Graphics screen) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public float perimetre() {
+		// TODO Auto-generated method stub
+		return 2*Math.PI*rayon;
+	}
+
+}

@@ -1,0 +1,14 @@
+package airHocker;
+
+import java.awt.Rectangle;
+
+public class Pulsar extends Palet {
+	public int taille = 10;
+	@Override
+	public Rectangle getRect(){
+		if(taille == 15){
+			taille = 5;
+		}
+    	return new Rectangle(x,y,taille,taille);
+    }
+}

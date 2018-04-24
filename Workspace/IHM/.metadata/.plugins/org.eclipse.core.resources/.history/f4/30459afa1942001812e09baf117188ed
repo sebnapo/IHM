@@ -1,0 +1,70 @@
+package Exo1;
+
+import java.awt.event.ActionEvent;
+import java.util.Observable;
+
+import javax.swing.AbstractAction;
+
+public class Controleur implements java.util.Observer{
+	private Modele modele;
+	private Vue vue;
+	public Controleur(Modele modele){
+		this.modele = modele;
+		ActionPlus listenerPlus = new ActionPlus(vue);
+		ActionMoins listenerMoins = new ActionMoins(vue);
+		this.vue = new Vue();
+		this.vue.getButtonPlus().addActionListener(listenerPlus);
+		this.vue.getButtonMoins().addActionListener(listenerMoins);
+	}
+	
+	@Override
+	public void update(Observable arg0, Object arg1) {
+		
+	}
+	
+	private class ActionPlus extends AbstractAction implements java.util.Observer {
+		private Vue vue;
+		private Modele modele;
+		
+		public ActionPlus(Vue vue, Modele modele){
+			this.vue = vue;
+			this.modele = modele;
+		}
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			this.modele.incValue();
+			this.vue.setLabelText((string)this.modele.getValue());
+			
+		}
+
+		@Override
+		public void update(Observable arg0, Object arg1) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+	}
+	
+	private class ActionMoins extends AbstractAction implements java.util.Observer {
+		private Vue vue;
+		private Modele modele;
+		
+		public ActionMoins(Vue vue){
+			this.vue = vue;
+			this.modele = modele;
+		}
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void update(Observable arg0, Object arg1) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+	}
+	
+}

@@ -1,0 +1,20 @@
+package Exo1;
+
+import java.util.Observable;
+import java.util.Set;
+
+public class UpdateTxt implements java.util.Observer {
+	
+	private ActionPlus modele;
+	
+	public UpdateTxt(ActionPlus modele){
+		this.modele = modele;
+		this.modele.addObserver(this);
+	}
+	
+	public void update(Observable arg0, Object arg1) {
+		// TODO Auto-generated method stub
+		System.out.println("La valeur a changée : " + this.modele.getValue());
+	}
+	
+}

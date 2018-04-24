@@ -1,0 +1,20 @@
+package geometrie;
+
+import java.awt.Graphics;
+
+public class Rectangle implements Figure{
+	public float longueur;
+	public float largeur;
+	
+	
+	public void trace(Graphics screen) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public float perimetre() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

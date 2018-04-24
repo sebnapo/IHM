@@ -1,0 +1,5 @@
+package napoleon.architectureComposite;
+
+public interface Liste {
+
+}

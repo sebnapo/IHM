@@ -1,0 +1,5 @@
+package Exo1;
+
+public class UpdateTxt implements java.util.Observer {
+	
+}

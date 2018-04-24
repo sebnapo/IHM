@@ -1,0 +1,18 @@
+package geometrie;
+
+import java.awt.Graphics;
+
+public class Cercle implements Figure{
+	public float rayon;
+	
+	public void trace(Graphics screen) {
+		screen.drawOval(50, 50, 50, 50);
+		
+	}
+
+	public float perimetre() {
+		// TODO Auto-generated method stub
+		return (float) (2*Math.PI*rayon);
+	}
+
+}

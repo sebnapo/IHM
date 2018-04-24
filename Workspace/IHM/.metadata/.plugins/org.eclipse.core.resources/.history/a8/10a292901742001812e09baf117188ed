@@ -1,0 +1,21 @@
+package Exo1;
+
+import javax.swing.JFrame;
+
+public class Main {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			ActionPlus ent = new ActionPlus(5);
+			Controlleur control = new Controlleur(ent);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}	
+	}
+
+}

@@ -1,0 +1,24 @@
+package Exo1;
+
+import javax.swing.JFrame;
+
+public class Main {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			Modele ent = new Modele(5);
+			for(int i =0; i <5; i++){
+				ent.decValue();
+			}
+			Controleur control = new Controleur(ent);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}	
+	}
+
+}

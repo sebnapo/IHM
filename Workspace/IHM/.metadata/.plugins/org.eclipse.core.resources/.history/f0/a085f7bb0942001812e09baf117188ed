@@ -1,0 +1,23 @@
+package Exo1;
+
+public class Main {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			Entier ent = new Entier(5);
+			//Entier ent1 = new Entier(11);
+			for(int i = 0; i < 6; i++){
+				ent.incValue();
+				System.out.println(ent.getValue());
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
+	}
+
+}

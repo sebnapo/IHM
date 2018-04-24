@@ -1,0 +1,39 @@
+package Exo1;
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.Dimension;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class Vue extends JFrame {
+	private JButton btnPlus,btnMoins;
+	private JLabel label;
+	
+	public Vue(){
+		Container pane = this.getContentPane();
+		this.setSize(400, 400);
+		
+		this.btnMoins = new JButton();
+		this.btnMoins.setPreferredSize(new Dimension(50,50));
+		this.btnPlus = new JButton();
+		this.btnPlus.setPreferredSize(new Dimension(50,50));
+		this.btnMoins.setText("COUCOU JE SUIS LE BOUTON MOINS");
+		this.btnPlus.setText("LOL MOI JE SUIS LE PLUS");
+		
+		pane.setLayout(new BorderLayout());
+		pane.add(this.btnMoins, BorderLayout.CENTER);
+		pane.add(this.btnPlus, BorderLayout.SOUTH);
+		
+		
+		pane.add(this.btnPlus);
+		pane.add(this.btnMoins);
+		
+		
+		this.setLocationRelativeTo(null);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.pack();
+		this.setVisible(true);
+	}
+}
